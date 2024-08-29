@@ -65,24 +65,24 @@ To facilitate this, we provide a very large input with over 100k tokens (the maj
 
 #### Run the demo with a pre-written batch of 32 user prompts
 
-##### Prefill & Decode demo
+- Prefill & Decode demo
 ```bash
 pytest -svv models/demos/t3000/mixtral8x7b/demo/demo_with_prefill.py::test_mixtral8x7b_demo[wormhole_b0-True-16k-general]
 ```
 
-##### Decode-only demo
+- Decode-only demo
 ```bash
 pytest -svv models/demos/t3000/mixtral8x7b/demo/demo.py::test_mixtral8x7b_demo[wormhole_b0-True-general]
 ```
 
 We also provide an input file with 32 user question-prompt for instruct weights (don't forget to update your flags to the correct weights!):
 
-##### Prefill & Decode demo
+- Prefill & Decode demo
 ```bash
 pytest -svv models/demos/t3000/mixtral8x7b/demo/demo_with_prefill.py::test_mixtral8x7b_demo[wormhole_b0-True-16k-instruct]
 ```
 
-##### Decode-only demo
+- Decode-only demo
 ```bash
 pytest -svv models/demos/t3000/mixtral8x7b/demo/demo.py::test_mixtral8x7b_demo[wormhole_b0-True-instruct]
 ```
