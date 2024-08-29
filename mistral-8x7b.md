@@ -1,5 +1,7 @@
 # Mixtral8x7b Demo
 
+The Mixtral-8x7B Large Language Model (LLM) is a pretrained generative Sparse Mixture of Experts (SMoE).
+
 ## How to Run
 
 ### Download the weights and repack
