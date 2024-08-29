@@ -1,4 +1,4 @@
-# Falcon40B Demo
+# Falcon40B Demo (T3000)
 
 Falcon-40B is a 40B parameters causal decoder-only model built by TII and trained on 1,000B tokens of RefinedWeb enhanced with curated corpora.
 
