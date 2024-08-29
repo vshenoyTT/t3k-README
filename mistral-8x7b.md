@@ -64,12 +64,15 @@ To facilitate this, we provide a very large input with over 100k tokens (the maj
 - For context lenghts below 4k tokens, we support a maximum batch size of 32.
 
 
-##### Run the demo with a pre-written batch of 32 user prompts
-```
-# Prefill & Decode demo
-pytest -svv models/demos/t3000/mixtral8x7b/demo/demo_with_prefill.py::test_mixtral8x7b_demo[wormhole_b0-True-16k-general]
+#### Run the demo with a pre-written batch of 32 user prompts
 
-# Decode-only demo
+##### Prefill & Decode demo
+```ssh
+pytest -svv models/demos/t3000/mixtral8x7b/demo/demo_with_prefill.py::test_mixtral8x7b_demo[wormhole_b0-True-16k-general]
+```
+
+##### Decode-only demo
+```ssh
 pytest -svv models/demos/t3000/mixtral8x7b/demo/demo.py::test_mixtral8x7b_demo[wormhole_b0-True-general]
 ```
 
