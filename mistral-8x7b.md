@@ -1,4 +1,4 @@
-# Mixtral8x7b Demo
+# Mixtral8x7b Demo (T3000)
 
 The Mixtral-8x7B Large Language Model (LLM) is a pretrained generative Sparse Mixture of Experts (SMoE).
 
