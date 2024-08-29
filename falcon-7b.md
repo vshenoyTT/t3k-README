@@ -7,6 +7,7 @@ Falcon7b prefill uses 8x8 core grid size, so the following environment variable 
 ```sh
 export WH_ARCH_YAML=wormhole_b0_80_arch_eth_dispatch.yaml
 ```
+<br></br>
 
 ## How to Run
 
@@ -19,7 +20,7 @@ pytest --disable-warnings -q -s --input-method=json --input-path='models/demos/t
 ```
 
 **Decoding method**: The default decoding method is top-k/top-p (stochastic) sampling, however greedy decoding can also be used by replacing `stochastic` with `greedy` in the command above.
-
+<br></br>
 ### Performance Measurement Mode
 
 To measure the performance of generating the `i`'th token while the KV cache is filled with `i-1` rows (where `i` is 128 in the command below):
@@ -30,6 +31,8 @@ pytest --disable-warnings -q -s --input-method=json --input-path='models/demos/t
 
 **Supported sequence lengths**: Currently `i` can only be set to 128, 1024, or 2048 for performance measurement mode.
 
+<br></br>
+
 ## Inputs
 
 A sample of input prompts for 256 users is provided in `input_data_t3000.json` in demo directory. If you wish you to run the model using a different set of input prompts you can provide a different path, e.g.:
@@ -37,6 +40,8 @@ A sample of input prompts for 256 users is provided in `input_data_t3000.json` i
 ```sh
 pytest --disable-warnings -q -s --input-method=json --input-path='path_to_input_prompts.json' models/demos/t3000/falcon7b/demo_t3000.py::test_demo_multichip[wormhole_b0-True-user_input0-8-True-default_mode_1024_stochastic]
 ```
+
+<br></br>
 
 ## Running on a different number of devices
 
@@ -46,6 +51,8 @@ the desired number of devices. For example, to run with 4 devices:
 ```sh
 pytest --disable-warnings -q -s --input-method=json --input-path='path_to_input_prompts.json' models/demos/t3000/falcon7b/demo_t3000.py::test_demo_multichip[wormhole_b0-True-user_input0-4-True-default_mode_1024_stochastic]
 ```
+
+<br></br>
 
 ## Details
 
