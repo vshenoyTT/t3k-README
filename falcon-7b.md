@@ -28,7 +28,7 @@ To measure the performance of generating the `i`'th token while the KV cache is 
 pytest --disable-warnings -q -s --input-method=json --input-path='models/demos/t3000/falcon7b/input_data_t3000.json' models/demos/t3000/falcon7b/demo_t3000.py::test_demo_multichip[wormhole_b0-True-user_input0-8-True-perf_mode_128_stochastic]
 ```
 
-- **Supported sequence lengths**: Currently `i` can only be set to 128, 1024, or 2048 for performance measurement mode.
+**Supported sequence lengths**: Currently `i` can only be set to 128, 1024, or 2048 for performance measurement mode.
 
 ## Inputs
 
@@ -49,7 +49,7 @@ pytest --disable-warnings -q -s --input-method=json --input-path='path_to_input_
 
 ## Details
 
-- **Weight caching**: This model picks up certain configs and weights from the huggingface pretrained model. We have used the `tiiuae/falcon-7b-instruct` version from huggingface. The first time you run the model, the weights are downloaded and stored on your machine, and it might take a few minutes. The second time you run the model on your machine, the weights are being read from cached files on your machine and it will be faster.
-- **Max Context Length**: The maximum context/sequence length is currently limited to 2048 tokens (the default maximum sequence length for the huggingface model).
+- **Weight caching**: This model picks up certain configs and weights from the Hugging Face pretrained model. We have used the `tiiuae/falcon-7b-instruct` version from Hugging Face. The first time you run the model, the weights are downloaded and stored on your machine, and it might take a few minutes. The second time you run the model on your machine, the weights are being read from cached files on your machine and it will be faster.
+- **Max Context Length**: The maximum context/sequence length is currently limited to 2048 tokens (the default maximum sequence length for the Hugging Face model).
 - **Batch Size**: Currently only a batch size of 32 is supported.
 - **Token Generation Scheme**: The model will first run in prefill mode on the input sequences to fill the KV cache and then in decode mode to generate the output tokens.
