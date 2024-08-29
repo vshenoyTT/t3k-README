@@ -1,12 +1,16 @@
 # Falcon7B Demo (T3000)
 
+Falcon-7B is a 7B parameters causal decoder-only model built by TII and trained on 1,500B tokens of RefinedWeb enhanced with curated corpora.
+
 Falcon7b prefill uses 8x8 core grid size, so the following environment variable needs to be set on a T3000 setup:
 
-`export WH_ARCH_YAML=wormhole_b0_80_arch_eth_dispatch.yaml`
+```sh
+export WH_ARCH_YAML=wormhole_b0_80_arch_eth_dispatch.yaml
+```
 
 ## How to Run
 
-#### Token Generation (Default) Mode
+### Token Generation (Default) Mode
 
 To run the demo using prewritten prompts for a batch of 256 users split evenly on 8 devices (currently only supports same token-length inputs):
 
@@ -14,9 +18,9 @@ To run the demo using prewritten prompts for a batch of 256 users split evenly o
 pytest --disable-warnings -q -s --input-method=json --input-path='models/demos/t3000/falcon7b/input_data_t3000.json' models/demos/t3000/falcon7b/demo_t3000.py::test_demo_multichip[wormhole_b0-True-user_input0-8-True-default_mode_1024_stochastic]
 ```
 
-- **Decoding method**: The default decoding method is top-k/top-p (stochastic) sampling, however greedy decoding can also be used by replacing `stochastic` with `greedy` in the command above.
+**Decoding method**: The default decoding method is top-k/top-p (stochastic) sampling, however greedy decoding can also be used by replacing `stochastic` with `greedy` in the command above.
 
-#### Performance Measurement Mode
+### Performance Measurement Mode
 
 To measure the performance of generating the `i`'th token while the KV cache is filled with `i-1` rows (where `i` is 128 in the command below):
 
